@@ -1,0 +1,82 @@
+@startuml
+package "MyMoves" {
+    class ChargeBeam{
+        +ChargeBeam(double power, double accuracy)
+        #void applySelfEffects(Pokemon p)
+        #String describe()
+    }
+    class DisarmingVoice{
+        +DisarmingVoice(double power, double accuracy)
+        #boolean checkAccuracy(Pokemon pAttacking, Pokemon pDefending)
+        #String describe()
+    }
+
+    class Swagger{
+            +Swagger(double power, double accuracy)
+            #void applyOppEffects(Pokemon p)
+            #void applySelfEffects(Pokemon p)
+            #String describe()
+        }
+
+    class DoubleTeam{
+        +DoubleTeam(double power, double accuracy)
+        #void applySelfEffects(Pokemon p)
+        #boolean checkAccuracy(Pokemon pokemon, Pokemon pokemon1)
+        #String describe()
+    }
+
+    class DracoMeteor{
+        +DracoMeteor(double power, double accuracy)
+        #void applySelfEffects(Pokemon p)
+        #String describe()
+    }
+
+    class DreamEater{
+        +DreamEater(double power, double accuracy)
+        #void applyOppDamage(Pokemon p , double damage)
+        #void applySelfEffects(Pokemon p)
+        #String describe()
+    }
+
+    class FocusBlast{
+        +FocusBlast(double power, double accuracy)
+        #void applyOppEffects(Pokemon p)
+        #String describe()
+    }
+
+    class PowerWhip{
+        +PowerWhip(double power, double accuracy)
+        #String describe()
+    }
+
+    class Rest{
+        +Rest(double power, double accuracy)
+        #void applySelfEffects(Pokemon p)
+        #boolean checkAccuracy(Pokemon pAttacking, Pokemon pDefensive)
+        #String describe()
+    }
+
+    class RockTomb{
+        +RockTomb(double power, double accuracy)
+        #void applyOppEffects(Pokemon p)
+        #String describe()
+    }
+
+
+}
+
+ChargeBeam ---> SpecialMove
+DisarmingVoice ---> SpecialMove
+DracoMeteor ---> SpecialMove
+DreamEater ---> SpecialMove
+FocusBlast ---> SpecialMove
+
+
+DoubleTeam --> StatusMove
+Rest --> StatusMove
+Swagger --> StatusMove
+
+PowerWhip --> PhysicalMove
+RockTomb --> PhysicalMove
+
+@enduml
